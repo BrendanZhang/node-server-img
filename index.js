@@ -26,4 +26,5 @@ app.post("/preview/:key", cors(), (req, res) => {
 	)
 })
 var port = process.env.port || 3000
+console.log(port)
 app.listen(port)
