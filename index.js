@@ -9,7 +9,8 @@ app.get("/", (req, res) => {
 	res.send("hello express")
 })
 app.get("/upload", cors(), upload.single("file"), (req, res) => {
-	res.send(req.file.filename)
+	let filename = req.file.filename
+	res.send(`{"id": "${filename}"}`)
 })
 app.post("/preview/:key", cors(), (req, res) => {
 	res.sendFile(
